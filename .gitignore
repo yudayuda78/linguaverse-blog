@@ -1,0 +1,47 @@
+# =========================
+# Go files
+# =========================
+/bin/
+/obj/
+/*.exe
+/*.dll
+/*.so
+/*.dylib
+
+# Go module files (tidak perlu ignore go.mod/go.sum, biarkan di repo)
+# /go.mod
+# /go.sum
+
+# =========================
+# Node.js files
+# =========================
+/node_modules/
+/package-lock.json
+/yarn.lock
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.local
+.env.*.local
+
+# =========================
+# Logs
+# =========================
+*.log
+server.log
+
+# =========================
+# OS & Editor
+# =========================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+
+# =========================
+# VS Code
+# =========================
+.vscode/

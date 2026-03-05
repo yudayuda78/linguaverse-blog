@@ -8,7 +8,7 @@ import (
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
 
 	tmpl := template.Must(template.ParseFiles(
-		"templates/home.html",
+		"templates/home/index.html",
 	))
 
 	data := map[string]string{
