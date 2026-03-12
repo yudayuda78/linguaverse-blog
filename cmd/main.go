@@ -15,6 +15,9 @@ func main() {
 	mux.HandleFunc("/", handler.HomeHandler)
 	mux.HandleFunc("/about", handler.AboutHandler)
 
+	fileServer := http.FileServer(http.Dir("./assets"))
+	mux.Handle("/assets/", http.StripPrefix("/assets/", fileServer))
+
 	database.Connect()
 
 	log.Println("Server running on :3000")
