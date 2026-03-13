@@ -1,26 +1,99 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{.Title}}</title>
 
-    <link rel="stylesheet" href="/assets/css/output.css">
+```
+<link rel="stylesheet" href="/assets/css/output.css">
+```
+
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
 
-    <div class="max-w-2xl bg-white shadow-lg rounded-xl p-8">
-        <h1 class="text-3xl font-bold text-gray-800 mb-4">
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Navbar -->
+
+<nav class="bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-blue-600">LinguaVerse</h1>
+
+```
+    <div class="space-x-6">
+        <a href="/" class="hover:text-blue-600">Home</a>
+        <a href="/about" class="hover:text-blue-600">About</a>
+        <a href="/blog" class="hover:text-blue-600">Blog</a>
+    </div>
+</div>
+```
+
+</nav>
+
+<!-- Hero -->
+
+<section class="max-w-6xl mx-auto px-4 py-16 text-center">
+    <h1 class="text-4xl font-bold mb-4">
+        {{.Content}}
+    </h1>
+
+```
+<p class="text-gray-600 max-w-xl mx-auto">
+    Platform belajar bahasa yang membantu kamu memahami dunia melalui kata dan cerita.
+</p>
+```
+
+</section>
+
+<!-- Blog Posts -->
+
+<section class="max-w-6xl mx-auto px-4 pb-16">
+
+```
+<h2 class="text-2xl font-semibold mb-8">
+    Artikel Terbaru
+</h2>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    {{range .Posts}}
+    <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-6">
+
+        <h3 class="text-lg font-semibold mb-2">
             {{.Title}}
-        </h1>
+        </h3>
 
-        <p class="text-gray-600 leading-relaxed">
+        <p class="text-gray-600 text-sm mb-4">
             {{.Content}}
         </p>
 
-        <a href="/about" class="text-blue-500 hover:underline">About</a>
-        
+        <a href="/post/{{.Slug}}" 
+           class="text-blue-500 hover:underline text-sm">
+           Baca Selengkapnya →
+        </a>
+
     </div>
+    {{else}}
+
+    <p class="text-gray-500">
+        Belum ada artikel.
+    </p>
+
+    {{end}}
+
+</div>
+```
+
+</section>
+
+<!-- Footer -->
+
+<footer class="bg-white border-t">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-center text-sm text-gray-500">
+        © 2026 LinguaVerse. All rights reserved.
+    </div>
+</footer>
 
 </body>
 </html>
